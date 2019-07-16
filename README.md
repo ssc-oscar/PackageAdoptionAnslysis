@@ -1,7 +1,7 @@
 # PackageAdoptionAnslysis
 This repository implemented an approach for software package adoption analysis, which was proposed in our paper. The data source were collected by leveraging WoC open source mining infrastructure, mentioned in paper WoC.
 scripts folder contains all scripts used and result folder contains calculated data (predictors) ready to feed in a regression model.
-## How it works? Entrance: npm_commands.sh
+## How it works? Entrance: npm_commands.sh (predictors calculation)
 ```
 # This command only runs once for every ecosystem, e.g., npm, RCRAN, etc.
 cd scripts
@@ -19,6 +19,7 @@ sh AusCmtsforboth.sh angular react angularVSreact
 # need to be run on da3 (mongoDB access)
 # first step for calculating RplGp
 sh replygapBefore.sh angular react angularVSreact angular/angular.js facebook/react
+sh replygapAfter.sh angular react angularVSreact
 
 # Calculating Unrslvd
 sh unresolved.sh angular angularVSreact
@@ -46,8 +47,13 @@ sh authorclosenessforboth.sh angular react angularVSreact
 sh Cfile.sh angular angularVSreact
 sh Cfile.sh react angularVSreact
 
-# need to train a survival model and then scp data and then go on (make predictions)
-# second step for Calculating RplGp
-sh replygapAfter.sh angular react angularVSreact
 ```
+
 ## Ready to fit regression model:
+```
+cd scripts
+Rscript choiceModel.R
+```
+
+## Result:
+![](result/angularVSreact.png)

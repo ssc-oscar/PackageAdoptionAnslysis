@@ -15,5 +15,4 @@ python avgresptime.py ./$pre/pkg2atime.thatpoint.$target2.s ./$pre/$target.resp.
 python preparedata_survivalmodel_right.py ./$pre/$target.resp.time.s ./$pre/$target2.resp.time.s 1>./$pre/survival_data 2>./$pre/survival_data.err
 python preparedata_survivalmodel.py ./$pre/pkg2atime.thatpoint.$target.s 1>./$pre/being.$target
 python preparedata_survivalmodel.py ./$pre/pkg2atime.thatpoint.$target2.s 1>./$pre/being.$target2
-
-
+Rscript survival.r
