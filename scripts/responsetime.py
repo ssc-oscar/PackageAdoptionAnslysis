@@ -26,7 +26,7 @@ def issueandfirstreponse(dbname):
     # "2012-01-06T00:00:00Z"}}, {'closed_at': {'$lte':
     # "2013-01-06T00:00:00Z"}}]}):
 
-    for entry in collissues.find({}):
+    for entry in collissues.find({'pull_request': {'$exists': False}}):
         c_time = timestamp2unixtime(entry['created_at'])
         # test closed_at time would be what? if null == None
         closed_time = entry['closed_at']
