@@ -56,5 +56,4 @@ Rscript choiceModel.R
 ```
 
 ## Result:
-![](result/angularVSreact.png)  
-**Notice:** *stackflow* measures all posts that are related to angular or react, not posts with high score.   
+![](result/angularVSreact.png)     
